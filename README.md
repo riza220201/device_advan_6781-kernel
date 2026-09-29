@@ -43,7 +43,7 @@ wrong order is a watchdog reset ~5 s into boot, with no panic and no log.
 
 All 180 + 178 modules demand `module_layout = 0x7c24b32d`
 (verified 2026-09-19 against the zip-chained images before staging, and
-spot-checked again on the staged files). The kernel -- whether built from
-source via `TARGET_KERNEL_SOURCE` or imported via `import-kernel.sh` --
-must reproduce it; `Android.mk`'s KMI gate in the device tree enforces
+spot-checked again on the staged files). The kernel -- imported via the device
+tree's `import-kernel.sh` (itel-rs4-kernel vanilla; there is no from-source
+kernel build) -- must reproduce it; `Android.mk`'s KMI gate in the device tree enforces
 this at build time against exactly these directories.
